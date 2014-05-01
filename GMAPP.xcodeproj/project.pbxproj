@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36BAD2BE19121E0200998805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BAD2BD19121E0200998805 /* Foundation.framework */; };
+		36BAD2C019121E0200998805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BAD2BF19121E0200998805 /* CoreGraphics.framework */; };
+		36BAD2C219121E0200998805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BAD2C119121E0200998805 /* UIKit.framework */; };
+		36BAD2C819121E0200998805 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36BAD2C619121E0200998805 /* InfoPlist.strings */; };
+		36BAD2CA19121E0200998805 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BAD2C919121E0200998805 /* main.m */; };
+		36BAD2CE19121E0200998805 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BAD2CD19121E0200998805 /* AppDelegate.m */; };
+		36BAD2D119121E0200998805 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BAD2CF19121E0200998805 /* Main.storyboard */; };
+		36BAD2D419121E0200998805 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BAD2D319121E0200998805 /* ViewController.m */; };
+		36BAD2D619121E0200998805 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36BAD2D519121E0200998805 /* Images.xcassets */; };
+		36BAD2DD19121E0200998805 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BAD2DC19121E0200998805 /* XCTest.framework */; };
+		36BAD2DE19121E0200998805 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BAD2BD19121E0200998805 /* Foundation.framework */; };
+		36BAD2DF19121E0200998805 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BAD2C119121E0200998805 /* UIKit.framework */; };
+		36BAD2E719121E0200998805 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 36BAD2E519121E0200998805 /* InfoPlist.strings */; };
+		36BAD2E919121E0200998805 /* GMAPPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BAD2E819121E0200998805 /* GMAPPTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		36BAD2E019121E0200998805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36BAD2B219121E0200998805 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 36BAD2B919121E0200998805;
+			remoteInfo = GMAPP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36BAD2BA19121E0200998805 /* GMAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		36BAD2BD19121E0200998805 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		36BAD2BF19121E0200998805 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		36BAD2C119121E0200998805 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		36BAD2C519121E0200998805 /* GMAPP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GMAPP-Info.plist"; sourceTree = "<group>"; };
+		36BAD2C719121E0200998805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36BAD2C919121E0200998805 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		36BAD2CB19121E0200998805 /* GMAPP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMAPP-Prefix.pch"; sourceTree = "<group>"; };
+		36BAD2CC19121E0200998805 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		36BAD2CD19121E0200998805 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		36BAD2D019121E0200998805 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		36BAD2D219121E0200998805 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		36BAD2D319121E0200998805 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		36BAD2D519121E0200998805 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		36BAD2DB19121E0200998805 /* GMAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMAPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		36BAD2DC19121E0200998805 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		36BAD2E419121E0200998805 /* GMAPPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GMAPPTests-Info.plist"; sourceTree = "<group>"; };
+		36BAD2E619121E0200998805 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		36BAD2E819121E0200998805 /* GMAPPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMAPPTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36BAD2B719121E0200998805 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BAD2C019121E0200998805 /* CoreGraphics.framework in Frameworks */,
+				36BAD2C219121E0200998805 /* UIKit.framework in Frameworks */,
+				36BAD2BE19121E0200998805 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36BAD2D819121E0200998805 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BAD2DD19121E0200998805 /* XCTest.framework in Frameworks */,
+				36BAD2DF19121E0200998805 /* UIKit.framework in Frameworks */,
+				36BAD2DE19121E0200998805 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		36BAD2B119121E0200998805 = {
+			isa = PBXGroup;
+			children = (
+				36BAD2C319121E0200998805 /* GMAPP */,
+				36BAD2E219121E0200998805 /* GMAPPTests */,
+				36BAD2BC19121E0200998805 /* Frameworks */,
+				36BAD2BB19121E0200998805 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36BAD2BB19121E0200998805 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36BAD2BA19121E0200998805 /* GMAPP.app */,
+				36BAD2DB19121E0200998805 /* GMAPPTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		36BAD2BC19121E0200998805 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36BAD2BD19121E0200998805 /* Foundation.framework */,
+				36BAD2BF19121E0200998805 /* CoreGraphics.framework */,
+				36BAD2C119121E0200998805 /* UIKit.framework */,
+				36BAD2DC19121E0200998805 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36BAD2C319121E0200998805 /* GMAPP */ = {
+			isa = PBXGroup;
+			children = (
+				36BAD2CC19121E0200998805 /* AppDelegate.h */,
+				36BAD2CD19121E0200998805 /* AppDelegate.m */,
+				36BAD2CF19121E0200998805 /* Main.storyboard */,
+				36BAD2D219121E0200998805 /* ViewController.h */,
+				36BAD2D319121E0200998805 /* ViewController.m */,
+				36BAD2D519121E0200998805 /* Images.xcassets */,
+				36BAD2C419121E0200998805 /* Supporting Files */,
+			);
+			path = GMAPP;
+			sourceTree = "<group>";
+		};
+		36BAD2C419121E0200998805 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36BAD2C519121E0200998805 /* GMAPP-Info.plist */,
+				36BAD2C619121E0200998805 /* InfoPlist.strings */,
+				36BAD2C919121E0200998805 /* main.m */,
+				36BAD2CB19121E0200998805 /* GMAPP-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		36BAD2E219121E0200998805 /* GMAPPTests */ = {
+			isa = PBXGroup;
+			children = (
+				36BAD2E819121E0200998805 /* GMAPPTests.m */,
+				36BAD2E319121E0200998805 /* Supporting Files */,
+			);
+			path = GMAPPTests;
+			sourceTree = "<group>";
+		};
+		36BAD2E319121E0200998805 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				36BAD2E419121E0200998805 /* GMAPPTests-Info.plist */,
+				36BAD2E519121E0200998805 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36BAD2B919121E0200998805 /* GMAPP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36BAD2EC19121E0200998805 /* Build configuration list for PBXNativeTarget "GMAPP" */;
+			buildPhases = (
+				36BAD2B619121E0200998805 /* Sources */,
+				36BAD2B719121E0200998805 /* Frameworks */,
+				36BAD2B819121E0200998805 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GMAPP;
+			productName = GMAPP;
+			productReference = 36BAD2BA19121E0200998805 /* GMAPP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		36BAD2DA19121E0200998805 /* GMAPPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36BAD2EF19121E0200998805 /* Build configuration list for PBXNativeTarget "GMAPPTests" */;
+			buildPhases = (
+				36BAD2D719121E0200998805 /* Sources */,
+				36BAD2D819121E0200998805 /* Frameworks */,
+				36BAD2D919121E0200998805 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36BAD2E119121E0200998805 /* PBXTargetDependency */,
+			);
+			name = GMAPPTests;
+			productName = GMAPPTests;
+			productReference = 36BAD2DB19121E0200998805 /* GMAPPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		36BAD2B219121E0200998805 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "황정식";
+				TargetAttributes = {
+					36BAD2DA19121E0200998805 = {
+						TestTargetID = 36BAD2B919121E0200998805;
+					};
+				};
+			};
+			buildConfigurationList = 36BAD2B519121E0200998805 /* Build configuration list for PBXProject "GMAPP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 36BAD2B119121E0200998805;
+			productRefGroup = 36BAD2BB19121E0200998805 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36BAD2B919121E0200998805 /* GMAPP */,
+				36BAD2DA19121E0200998805 /* GMAPPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		36BAD2B819121E0200998805 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BAD2D619121E0200998805 /* Images.xcassets in Resources */,
+				36BAD2C819121E0200998805 /* InfoPlist.strings in Resources */,
+				36BAD2D119121E0200998805 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36BAD2D919121E0200998805 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BAD2E719121E0200998805 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36BAD2B619121E0200998805 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BAD2D419121E0200998805 /* ViewController.m in Sources */,
+				36BAD2CE19121E0200998805 /* AppDelegate.m in Sources */,
+				36BAD2CA19121E0200998805 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		36BAD2D719121E0200998805 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BAD2E919121E0200998805 /* GMAPPTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		36BAD2E119121E0200998805 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 36BAD2B919121E0200998805 /* GMAPP */;
+			targetProxy = 36BAD2E019121E0200998805 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		36BAD2C619121E0200998805 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36BAD2C719121E0200998805 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		36BAD2CF19121E0200998805 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36BAD2D019121E0200998805 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		36BAD2E519121E0200998805 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				36BAD2E619121E0200998805 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		36BAD2EA19121E0200998805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		36BAD2EB19121E0200998805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		36BAD2ED19121E0200998805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMAPP/GMAPP-Prefix.pch";
+				INFOPLIST_FILE = "GMAPP/GMAPP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		36BAD2EE19121E0200998805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMAPP/GMAPP-Prefix.pch";
+				INFOPLIST_FILE = "GMAPP/GMAPP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		36BAD2F019121E0200998805 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GMAPP.app/GMAPP";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMAPP/GMAPP-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GMAPPTests/GMAPPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		36BAD2F119121E0200998805 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GMAPP.app/GMAPP";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GMAPP/GMAPP-Prefix.pch";
+				INFOPLIST_FILE = "GMAPPTests/GMAPPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36BAD2B519121E0200998805 /* Build configuration list for PBXProject "GMAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36BAD2EA19121E0200998805 /* Debug */,
+				36BAD2EB19121E0200998805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		36BAD2EC19121E0200998805 /* Build configuration list for PBXNativeTarget "GMAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36BAD2ED19121E0200998805 /* Debug */,
+				36BAD2EE19121E0200998805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		36BAD2EF19121E0200998805 /* Build configuration list for PBXNativeTarget "GMAPPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36BAD2F019121E0200998805 /* Debug */,
+				36BAD2F119121E0200998805 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 36BAD2B219121E0200998805 /* Project object */;
+}
