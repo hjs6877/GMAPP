@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<CLLocationManagerDelegate>
+@property (strong, nonatomic) IBOutlet CLBeaconRegion* myBeaconRegion;
+@property (strong, nonatomic) IBOutlet CLLocationManager* locationManager;
+@property (weak, nonatomic) IBOutlet UILabel *beconStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *labelMode;
+@property (weak, nonatomic) IBOutlet UISwitch *btnSwitch;
+- (IBAction)touchSwitch:(id)sender;
 
 @end
