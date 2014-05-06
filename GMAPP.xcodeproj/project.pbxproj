@@ -23,6 +23,7 @@
 		36BAD2E919121E0200998805 /* GMAPPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 36BAD2E819121E0200998805 /* GMAPPTests.m */; };
 		36BAD2F9191260C100998805 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BAD2F8191260C100998805 /* CoreBluetooth.framework */; };
 		36BAD2FB191260CB00998805 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BAD2FA191260CB00998805 /* CoreLocation.framework */; };
+		36E2DA611916496D00BCAFED /* IvtInfoPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E2DA601916496D00BCAFED /* IvtInfoPopupViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		36BAD2E819121E0200998805 /* GMAPPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMAPPTests.m; sourceTree = "<group>"; };
 		36BAD2F8191260C100998805 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		36BAD2FA191260CB00998805 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		36E2DA5F1916496D00BCAFED /* IvtInfoPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IvtInfoPopupViewController.h; sourceTree = "<group>"; };
+		36E2DA601916496D00BCAFED /* IvtInfoPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IvtInfoPopupViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 		36BAD2C319121E0200998805 /* GMAPP */ = {
 			isa = PBXGroup;
 			children = (
+				36E2DA5F1916496D00BCAFED /* IvtInfoPopupViewController.h */,
+				36E2DA601916496D00BCAFED /* IvtInfoPopupViewController.m */,
 				36BAD2CC19121E0200998805 /* AppDelegate.h */,
 				36BAD2CD19121E0200998805 /* AppDelegate.m */,
 				36BAD2CF19121E0200998805 /* Main.storyboard */,
@@ -261,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36BAD2D419121E0200998805 /* ViewController.m in Sources */,
+				36E2DA611916496D00BCAFED /* IvtInfoPopupViewController.m in Sources */,
 				36BAD2CE19121E0200998805 /* AppDelegate.m in Sources */,
 				36BAD2CA19121E0200998805 /* main.m in Sources */,
 			);
@@ -328,7 +334,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: JUNG SIK HWANG (HBMLF524MU)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -346,6 +352,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "FFEF8926-F3A6-40B0-A38A-89C0047277BD";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -366,7 +373,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: JUNG SIK HWANG (HBMLF524MU)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -377,6 +384,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "FFEF8926-F3A6-40B0-A38A-89C0047277BD";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -388,10 +396,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMAPP/GMAPP-Prefix.pch";
 				INFOPLIST_FILE = "GMAPP/GMAPP-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "199AE02B-5907-436E-9F58-2FAEC02EAA0D";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -402,10 +413,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMAPP/GMAPP-Prefix.pch";
 				INFOPLIST_FILE = "GMAPP/GMAPP-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "199AE02B-5907-436E-9F58-2FAEC02EAA0D";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -469,6 +483,7 @@
 				36BAD2EE19121E0200998805 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36BAD2EF19121E0200998805 /* Build configuration list for PBXNativeTarget "GMAPPTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +492,7 @@
 				36BAD2F119121E0200998805 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

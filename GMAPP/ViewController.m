@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "IvtInfoPopupViewController.h"
 
 @interface ViewController ()
 
@@ -20,9 +21,10 @@
     self.locationManager.delegate = self;
     
     NSUUID* uuid = [[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"];
-    
     self.myBeaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid major:0 minor:0 identifier:@"hjs"];
-    [self.locationManager startMonitoringForRegion:self.myBeaconRegion];
+    [self.locationManager stopMonitoringForRegion:self.myBeaconRegion];
+    [self.locationManager stopRangingBeaconsInRegion:self.myBeaconRegion];
+    
     NSLog(@"뷰 로딩!!");
     NSLog(@"%@", self.myBeaconRegion);
     [super viewDidLoad];
@@ -35,34 +37,42 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ 
+ */
 - (IBAction)touchSwitch:(id)sender {
+    // 재물조사 모드일 경우, Beacon을 모니터링한다.
     if ([_btnSwitch isOn]) {
         NSLog(@"Switch on!!");
         _labelMode.text = @"On";
+        [self.locationManager startMonitoringForRegion:self.myBeaconRegion];
+        [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
     }else{
         NSLog(@"Switch off!!");
         _labelMode.text = @"Off";
-    }
+        [self.locationManager stopMonitoringForRegion:self.myBeaconRegion];
+        [self.locationManager stopRangingBeaconsInRegion:self.myBeaconRegion];
+        self.beconStatusLabel.text = @"Beacon 모니터링을 종료했습니다.";
+        NSLog(@"Beacon 모니터링을 종료했습니다.");    }
 }
 
-/*
+
 - (void)locationManager:(CLLocationManager*)manager didEnterRegion:(CLRegion*)region
 {
     [self.locationManager startRangingBeaconsInRegion:self.myBeaconRegion];
+    self.beconStatusLabel.text = @"환영합니다! 타겟 Beacon안에 들어왔습니다.";
+    NSLog(@"환영합니다! 타겟 beacon안에 들어왔습니다.");
 }
 
 -(void)locationManager:(CLLocationManager*)manager didExitRegion:(CLRegion*)region
 {
     [self.locationManager stopRangingBeaconsInRegion:self.myBeaconRegion];
-    self.beconStatusLabel.text = @"Off";
+    
+    self.beconStatusLabel.text =@"타겟 Beacon 범위에서 떠났습니다.";
+    NSLog(@"타겟 범위에서 떠났습니다.");
 }
 
--(void)locationManager:(CLLocationManager*)manager
-       didRangeBeacons:(NSArray*)beacons
-              inRegion:(CLBeaconRegion*)region
-{
-    
-    self.beconStatusLabel.text = @"On";
+- (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
     
     CLBeacon *foundBeacon = [beacons firstObject];
     
@@ -75,128 +85,29 @@
     NSLog(@"major: %@", major);
     NSLog(@"minor: %@", minor);
     
-    NSLog(@"locationManager 메서드 호출!!");
-    if([beacons count] > 0){
-        NSLog(@"감지된 비콘이 있음");
-    }else{
-        NSLog(@"현재 범위에 비콘이 존재 하지 않음.");
-    }
-}
- */
-
-/*
-- (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region {
-    
-    // handle notifyEntryStateOnDisplay
-    // notify user they have entered the region, if you haven't already
-    if (manager == self.locationManager &&
-        [region.identifier isEqualToString:kUniqueRegionIdentifier] &&
-        state == CLRegionStateInside &&
-        !self.didShowEntranceNotifier) {
-        
-        // start beacon ranging
-        [self startBeaconRanging];
-    }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-    
-    // handle notifyOnEntry
-    // notify user they have entered the region, if you haven't already
-    if (manager == self.locationManager &&
-        [region.identifier isEqualToString:kUniqueRegionIdentifier] &&
-        !self.didShowEntranceNotifier) {
-        
-        // start beacon ranging
-        [self startBeaconRanging];
-    }
-}
-*/
-- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
-    NSLog(@"타겟 범위에서 떠났습니다.");
-    // optionally notify user they have left the region
-    /*
-    if (!self.didShowExitNotifier) {
-        
-        self.didShowExitNotifier = YES;
-        
-        // fire notification with region update
-        [self fireUpdateNotificationForStatus:@"Thanks for visiting.  You have now left the target region."];
-    }
-    
-    // reset entrance notifier
-    self.didShowEntranceNotifier = NO;
-    
-    // stop beacon ranging
-    [manager stopRangingBeaconsInRegion:[CSMBeaconRegion targetRegion]];
-    */
-}
-
-- (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-    
     // identify closest beacon in range
     if ([beacons count] > 0) {
         CLBeacon *closestBeacon = beacons[0];
         if (closestBeacon.proximity == CLProximityImmediate) {
- 
-            // Provide proximity based information to user.  You may choose to do this repeatedly
-            // or only once depending on the use case.  Optionally use major, minor values here to provide beacon-//specific content
- 
-            //[self fireUpdateNotificationForStatus:@"현재 Beacon에 가장 근접해있습니다."];
-            NSLog(@"현재 Beacon에 근접해있습니다.");
+            self.beconStatusLabel.text = @"현재 Beacon에 근접(immediate)해있습니다.";
+            NSLog(@"현재 Beacon에 근접(immediate)해있습니다.");
             
         } else if (closestBeacon.proximity == CLProximityNear) {
-            // detect other nearby beacons
-            // optionally hide previously displayed proximity based information
-            //[self fireUpdateNotificationForStatus:@"Beacon이 가까이에 있습니다."];
-            NSLog(@"Beacon이 현재 당신 가까이에 있습니다.");
+            self.beconStatusLabel.text = @"현재 Beacon이 근처(nearby)에 있습니다.";
+            NSLog(@"현재 Beacon이 근처(nearby)에 있습니다.");
+            
+            IvtInfoPopupViewController* ivtInfoPopup = [self.storyboard instantiateViewControllerWithIdentifier:@"IvtInfoPopupViewController"];
+            [self presentViewController:ivtInfoPopup animated:YES completion:NULL];
         }
     } else {
-        // no beacons in range - signal may have been lost
-        // optionally hide previously displayed proximity based information
-        //[self fireUpdateNotificationForStatus:@"현재 범위내에 어떤 Beacon도 없습니다."];
-        NSLog(@"현재 범위내에 해당 Beacond이 없습니다.");
+        self.beconStatusLabel.text = @"현재 범위내에 해당 Beacon이 없습니다.";
+        NSLog(@"현재 범위내에 해당 Beacon이 없습니다.");
     }
 }
 
-/* 
-- (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error {
-    
-    // fire notification of range failure
-    [self fireUpdateNotificationForStatus:[NSString stringWithFormat:@"Beacon ranging 범위 측정에서 에러가 발생함: %@", error]];
-    
-    // assume notifications failed, reset indicators
-    self.didShowEntranceNotifier = NO;
-    self.didShowExitNotifier = NO;
-}
-*/
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region {
-    NSLog(@"현재 비콘을 모니터링 중입니다.");
-    // fire notification of region monitoring
-    //[self fireUpdateNotificationForStatus:[NSString stringWithFormat:@"현재 Beaon을 모니터링 중입니다.: %@",((CLBeaconRegion*)region).identifier]];
+    self.beconStatusLabel.text = @"현재 Beacon을 모니터링 중입니다.";
+    NSLog(@"현재 Beacon을 모니터링 중입니다.");
 }
 
-/*
-- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error {
-    
-    // fire notification with status update
-    [self fireUpdateNotificationForStatus:[NSString stringWithFormat:@"Beacon 모니터링중 에러 발생: %@", error]];
-    
-    // assume notifications failed, reset indicators
-    self.didShowEntranceNotifier = NO;
-    self.didShowExitNotifier = NO;
-}
-
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    
-    // current location usage is required to use this demo app
-    if (status == kCLAuthorizationStatusDenied || status == kCLAuthorizationStatusRestricted) {
-        [[[UIAlertView alloc] initWithTitle:@"Current Location Required"
-                                    message:@"Please re-enable Core Location to run this Demo.  The app will now exit."
-                                   delegate:self
-                          cancelButtonTitle:nil
-                          otherButtonTitles:@"OK", nil] show];
-    }
-}
-*/
 @end

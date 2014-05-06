@@ -7,15 +7,59 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    ViewController* rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = rootViewController;
+    [self.window makeKeyAndVisible];
+    
+    // 푸시서비스 등록
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeAlert|
+     UIRemoteNotificationTypeBadge|
+     UIRemoteNotificationTypeSound];
+     
+    NSLog(@"푸시 서비스 등록");
     return YES;
 }
-							
+
+// 디바이스 토큰 획득
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    
+    NSMutableString *deviceId = [NSMutableString string];
+    const unsigned char* ptr = (const unsigned char*) [deviceToken bytes];
+    
+    for(int i = 0 ; i < 32 ; i++)
+    {
+        [deviceId appendFormat:@"%02x", ptr[i]];
+    }
+    
+    NSLog(@"APNS Device Token: %@", deviceId);
+}
+
+// 푸시 메시지를 받았을 경우 호출되는 메서드
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    //NSString *result = [NSString stringWithFormat:@"%@", userInfo];
+    NSString* msg = @"관리자의 승인이 떨어졌습니다.\n다음 장소로 이동하세요";
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                    message:msg delegate:nil
+                                          cancelButtonTitle:@"확인"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
